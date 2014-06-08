@@ -52,6 +52,11 @@
                     $id = $rows[0]["id"];
                     
                     $_SESSION["id"] = $id;
+                    
+                    // remember username and current deposit
+                    $_SESSION["username"] = $row["username"];
+                    $_SESSION["cash"] = $row["cash"];
+                    
                     redirect("/");
                 }
             }

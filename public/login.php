@@ -30,6 +30,10 @@
             {
                 // remember that user's now logged in by storing user's ID in session
                 $_SESSION["id"] = $row["id"];
+                
+                // remember username and current deposit
+                $_SESSION["username"] = $row["username"];
+                $_SESSION["cash"] = $row["cash"];
 
                 // redirect to portfolio
                 redirect("/");
