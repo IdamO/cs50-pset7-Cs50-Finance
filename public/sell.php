@@ -52,6 +52,10 @@
                
             $_SESSION["cash"] += $value;
            
+            // Log the history
+            $query = query("INSERT INTO history(user_id, type, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?, Now())"
+                ,$_SESSION["id"], 0, strtoupper($_POST["code"]), $shares, $stock["price"]);
+            
             // Redirect to home
             redirect("/");
         }
