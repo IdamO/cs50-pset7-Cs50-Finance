@@ -31,13 +31,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
                 if ($_POST["password"] != $_POST["confirmation"])
                                 {
-                                        apologize("Missmatch. The new passworddoes not match its Confirmation.");
+                                        apologize("Missmatch. The new password does not match its Confirmation.");
         }
                 
         else
         {
                         if(query("UPDATE users SET hash = ( ? ) WHERE username = ( ? )", crypt($_POST["password"]),$_POST["username"]) === false)
-                                apologize("Sorry, some internal error ocured.");
+                                apologize("Sorry, some internal error occurred.");
                         else
                                 redirect("index.php");
             
